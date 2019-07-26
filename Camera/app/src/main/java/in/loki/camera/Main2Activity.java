@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +30,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     private String TAG = "Main2Activity";
 
     private TextView tv;
-    private RelativeLayout relativeLayout;
+    private ImageView relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             throw new IllegalArgumentException("Must pass EXTRA_POST_KEY");
         }
 
-        Toast.makeText(this, Uid, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, Uid, Toast.LENGTH_SHORT).show();
         // Initialize Database
         mPostReference = FirebaseDatabase.getInstance().getReference()
                 .child("Requests").child(Ename).child("Active").child(Uid);
@@ -77,7 +79,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                             }
 
                         }
-                    Toast.makeText(Main2Activity.this, "Request acked", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(Main2Activity.this, "Request acked", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -92,4 +94,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
 
     }
+
+    public void exitor(View view) {
+        System.exit(0);
+    }
+
 }

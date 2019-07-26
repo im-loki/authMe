@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ITC-Auth</string>
+
+    <string name="login_preference">in.loki.mylogin_login_perference</string>
+    <string name="login_status_perference">in.loki.mylogin_login_status_perference</string>
+    <string name="title_activity_selection1">Selection1</string>
+    <string name="tab_text_1">Active</string>
+    <string name="tab_text_2">History</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Hello blank fragment-1</string>
+    <string name="hello_blank_fragment2">Hello blank fragment-2</string>
+    <string name="gname">Gname</string>
+    <string name="date">Date</string>
+    <string name="check">check</string>
+    <string name="none">None</string>
+    <string name="todo">TODO</string>
+</resources>

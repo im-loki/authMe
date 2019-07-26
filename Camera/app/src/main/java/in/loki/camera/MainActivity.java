@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,7 +31,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.*;
+
+import id.zelory.compressor.Compressor;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView img;
     private EditText Uname, Ename, Phone, Purpose;
 
-    private TextView tv;
+//    private TextView tv;
 
     private DatabaseReference mDatabase;
     private StorageReference mStorageRef;
@@ -54,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        View decorView = getWindow().getDecorView();
+//// Hide the status bar.
+//        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+//        decorView.setSystemUiVisibility(uiOptions);
+
         setContentView(R.layout.activity_main);
 
         req_but = findViewById(R.id.req_but);
@@ -62,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         Ename = findViewById(R.id.editEname);
         Phone = findViewById(R.id.editPhone);
         Purpose = findViewById(R.id.editPurpose);
-        tv = findViewById(R.id.address);
+//        tv = findViewById(R.id.address);
         final String[] phone = new String[1];
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
@@ -134,7 +145,16 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == IMAGE_CAPTURE_CODE && resultCode == RESULT_OK) {
             img.setImageURI(image_uri);
-            tv.setText(image_uri.toString());
+            Glide.with(getBaseContext())
+                    .load(image_uri)
+                    .override(250,250)
+                    .centerCrop()
+                    .placeholder(R.drawable.cam_placeholder)
+                    .crossFade()
+                    .into(img);
+//            tv.setText(image_uri.toString());
+
+
         }
     }
 
@@ -144,11 +164,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String name, String email) {
+        final ProgressDialog progress = new ProgressDialog(this);
+        progress.setTitle("Uploading");
+        progress.setMessage("Saving Image");
+        progress.setCancelable(false);
+        progress.show();
 
         if (image_uri != null) {
             Calendar cal = Calendar.getInstance();
-            Date date=cal.getTime();
+            final Date date=cal.getTime();
             final StorageReference ref = mStorageRef.child("images/"+date+".jpg");
+            Toast.makeText(this, image_uri.toString(), Toast.LENGTH_SHORT).show();
 
             UploadTask uploadTask = ref.putFile(image_uri);
 
@@ -167,6 +193,22 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
+
+                        u1 = ref.getDownloadUrl().toString();
+//                        tv.setText(u1);
+
+                        String id = mDatabase.push().getKey();
+                        Request_ack req = new Request_ack(Uname.getText().toString(), Purpose.getText().toString(),
+                                id,Phone.getText().toString(), downloadUri.toString(),date);
+                        mDatabase.child(Ename.getText().toString()).child("Active").child(id).setValue(req);
+                        progress.dismiss();
+//                        Toast.makeText(MainActivity.this, "sent", Toast.LENGTH_LONG).show();
+
+                        Intent intent = new Intent(getBaseContext(), Main2Activity.class);
+                        intent.putExtra("E_POST_KEY", Ename.getText().toString());
+                        intent.putExtra("R_POST_KEY", id);
+                        startActivity(intent);
+                        Toast.makeText(getBaseContext(), "Wait", Toast.LENGTH_SHORT).show();
                     } else {
                         // Handle failures
                         // ...
@@ -174,23 +216,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            u1 = ref.getDownloadUrl().toString();
-            tv.setText(u1);
 
-            String id = mDatabase.push().getKey();
-            Request_ack req = new Request_ack(Uname.getText().toString(), Purpose.getText().toString(),
-                    id,Phone.getText().toString(), u1);
-            mDatabase.child(Ename.getText().toString()).child("Active").child(id).setValue(req);
-            Toast.makeText(MainActivity.this, "sent", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, Main2Activity.class);
-            intent.putExtra("E_POST_KEY", Ename.getText().toString());
-            intent.putExtra("R_POST_KEY", id);
-            startActivity(intent);
-            Toast.makeText(this, "Wait", Toast.LENGTH_SHORT).show();
             //pd.dismiss();
         }
         else
             Toast.makeText(MainActivity.this, "Take a Picture", Toast.LENGTH_SHORT).show();
     }
+
+
 
 }

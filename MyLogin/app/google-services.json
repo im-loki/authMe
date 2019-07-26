@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "37574684488",
+    "firebase_url": "https://camera-cdd83.firebaseio.com",
+    "project_id": "camera-cdd83",
+    "storage_bucket": "camera-cdd83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37574684488:android:46ac6934ffd2ead4",
+        "android_client_info": {
+          "package_name": "in.loki.camera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37574684488-103ocuj8tni08d35vcr5u45l71p3tr0c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.loki.camera",
+            "certificate_hash": "f2be0673a18840d9d5bb5def06265a2a8012a9bb"
+          }
+        },
+        {
+          "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhKSlkvHQaxoXNdEOpPZ-xU_8Ni8MBWI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37574684488:android:d57ca4e2895527be",
+        "android_client_info": {
+          "package_name": "in.loki.mylogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37574684488-lcnpitaq5jgpisq0ns7vbiguli3tf811.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.loki.mylogin",
+            "certificate_hash": "f2be0673a18840d9d5bb5def06265a2a8012a9bb"
+          }
+        },
+        {
+          "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhKSlkvHQaxoXNdEOpPZ-xU_8Ni8MBWI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37574684488:android:fe437ea6b1a5468e",
+        "android_client_info": {
+          "package_name": "in.loki.t01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37574684488-2fl7g5seca5bsd84q88lpnli2p9t8c38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.loki.t01",
+            "certificate_hash": "f2be0673a18840d9d5bb5def06265a2a8012a9bb"
+          }
+        },
+        {
+          "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhKSlkvHQaxoXNdEOpPZ-xU_8Ni8MBWI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

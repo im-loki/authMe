@@ -7,80 +7,139 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editPurpose"
-        android:layout_width="match_parent"
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/card_view1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editEname"
-        android:layout_alignParentBottom="false"
+        android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Purpose"
-        android:inputType="textPersonName"
-        android:singleLine="true" />
+        app:cardBackgroundColor="#E9E3E5"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="5dp">
 
-    <EditText
-        android:id="@+id/editEname"
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:contentDescription="image"
+                android:src="@drawable/cam_placeholder" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editUname"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Empolyee to be visited"
-        android:inputType="textPersonName"
-        android:singleLine="true" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:contentDescription="image"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
-
-    <EditText
-        android:id="@+id/editUname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView2"
-        android:layout_alignParentBottom="false"
+        android:layout_below="@id/card_view1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="Enter Name"
-        android:inputType="textPersonName"
-        android:singleLine="true" />
+        app:cardBackgroundColor="#EEE8EA"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="5dp">
 
-    <EditText
-        android:id="@+id/editPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editPurpose"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Phone No"
-        android:inputType="phone" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editUname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Enter Name"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/editEname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editUname"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Empolyee to be visited"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/editPurpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editEname"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Purpose"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+
+
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editPurpose"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Phone No"
+                android:inputType="phone" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/req_but"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editPhone"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:text="Request" />
-
-    <TextView
-        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/req_but"
-        android:layout_marginTop="10dp"/>
+        android:layout_below="@id/card_view2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#FF9100"
+        android:text="Request" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:contentDescription="image"
+        android:src="@drawable/logo_smid" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:text="Request-App"
+        android:textSize="35sp"
+        android:textStyle="normal|bold" />
 
 
 </RelativeLayout>

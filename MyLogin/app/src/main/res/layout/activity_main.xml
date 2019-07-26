@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/intro_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo_big" />
+
+    <TextView
+        android:id="@+id/intro1"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Auth App"
+        android:textSize="35sp"
+        android:layout_below="@+id/intro_image"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro1"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="#E9E3E5"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login Info"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/login"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/intro"
+                android:layout_marginTop="20dp"
+                android:hint="Enter Your Name"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="numberPassword" />
+
+            <Button
+                android:id="@+id/button_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pwd"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:onClick="logger"
+                android:text="GO" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
