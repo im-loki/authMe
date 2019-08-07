@@ -104,12 +104,16 @@ public class MainActivity extends AppCompatActivity {
         req_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                phone[0] = Phone.getText().toString();
+//                phone[0] = Phone.getText().toString();
 //                tv.setText(phone[0]+phone[0].length());
                 if (Phone.getText().toString().isEmpty() || Ename.getText().toString().isEmpty() ||
                 Uname.getText().toString().isEmpty() || Purpose.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this, "Enter all data", Toast.LENGTH_LONG).show();
-                } else
+                }
+                else if(Phone.getText().toString().length() != 10) {
+                    Toast.makeText(MainActivity.this, "Enter valid phone no", Toast.LENGTH_SHORT).show();
+                }
+                else
                     submitPost();
             }
         });
@@ -153,8 +157,14 @@ public class MainActivity extends AppCompatActivity {
                     .crossFade()
                     .into(img);
 //            tv.setText(image_uri.toString());
+        }
 
+        if(requestCode == IMAGE_CAPTURE_CODE && resultCode == RESULT_CANCELED){
+            image_uri = null;
+        }
 
+        if (requestCode == 101 && resultCode==RESULT_CANCELED){
+            resetfields();
         }
     }
 
@@ -168,9 +178,10 @@ public class MainActivity extends AppCompatActivity {
         progress.setTitle("Uploading");
         progress.setMessage("Saving Image");
         progress.setCancelable(false);
-        progress.show();
 
         if (image_uri != null) {
+            progress.show();
+
             Calendar cal = Calendar.getInstance();
             final Date date=cal.getTime();
             final StorageReference ref = mStorageRef.child("images/"+date+".jpg");
@@ -207,7 +218,9 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(getBaseContext(), Main2Activity.class);
                         intent.putExtra("E_POST_KEY", Ename.getText().toString());
                         intent.putExtra("R_POST_KEY", id);
-                        startActivity(intent);
+
+                        startActivityForResult(intent,101);
+                        
                         Toast.makeText(getBaseContext(), "Wait", Toast.LENGTH_SHORT).show();
                     } else {
                         // Handle failures
@@ -223,6 +236,13 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Take a Picture", Toast.LENGTH_SHORT).show();
     }
 
-
+    private void resetfields(){
+        Uname.setText("");
+        Ename.setText("");
+        Phone.setText("");
+        Purpose.setText("");
+        image_uri = null;
+        img.setImageResource(R.drawable.cam_placeholder);
+    }
 
 }

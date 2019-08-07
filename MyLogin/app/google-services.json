@@ -45,6 +45,43 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:37574684488:android:ea51b5cd06ede5e8",
+        "android_client_info": {
+          "package_name": "in.loki.myapplication011"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37574684488-mq8t948p5sld821l7vdls0sinj0ngdt0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.loki.myapplication011",
+            "certificate_hash": "f2be0673a18840d9d5bb5def06265a2a8012a9bb"
+          }
+        },
+        {
+          "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhKSlkvHQaxoXNdEOpPZ-xU_8Ni8MBWI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37574684488-vgm7gr61siba725gccjmqpc5e6fomero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:37574684488:android:d57ca4e2895527be",
         "android_client_info": {
           "package_name": "in.loki.mylogin"

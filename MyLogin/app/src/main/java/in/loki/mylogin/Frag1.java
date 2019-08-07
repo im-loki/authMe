@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -43,7 +42,7 @@ public class Frag1 extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frag1,container,false);
 
-        Toast.makeText(getContext(),"Logged in as: "+e_name, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext(),"Logged in as: "+e_name, Toast.LENGTH_SHORT).show();
 
         recyclerView = view.findViewById(R.id.recycler_view1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -85,6 +84,5 @@ public class Frag1 extends Fragment {
             }
         });
     }
-
 
 }

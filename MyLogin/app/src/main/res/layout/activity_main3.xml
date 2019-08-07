@@ -61,7 +61,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="Name"
-                android:textColor="#FF1744"
+                android:textColor="#B71C1C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -73,8 +73,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:text="Purpose"
-                android:textColor="#F50057"
-                android:textSize="16sp" />
+                android:textColor="#4A148C"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/disp_phone"
@@ -83,11 +83,12 @@
                 android:layout_below="@id/disp_purpose"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:textColor="#F50057"
                 android:autoLink="phone"
                 android:clickable="true"
                 android:linksClickable="true"
                 android:text="Phone"
+                android:textColor="#01579B"
+                android:textColorLink="#01579B"
                 android:textSize="16sp"
                 android:textStyle="normal" />
 
@@ -122,27 +123,31 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/lol"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="#53AD57"
-        android:onClick="accept"
-        android:text="Accept" />
 
-    <Button
-        android:id="@+id/butt_reject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lol"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#F44336"
-        android:onClick="reject"
-        android:text="Reject" />
+            <Button
+                android:id="@+id/lol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="#53AD57"
+                android:onClick="accept"
+                android:text="Accept"
+                android:textSize="20sp"
+                android:textStyle="normal|bold" />
+
+            <Button
+                android:id="@+id/butt_reject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lol"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#F44336"
+                android:onClick="reject"
+                android:text="Reject"
+                android:textSize="20sp" />
 
         </RelativeLayout>
 

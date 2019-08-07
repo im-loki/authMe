@@ -1,5 +1,6 @@
 package in.loki.mylogin;
 
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -101,12 +102,24 @@ public class Main3Activity extends AppCompatActivity {
     public void accept(View view) {
         u.setAck(0);
         updateAck();
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
         Toast.makeText(this, "Accepted", Toast.LENGTH_SHORT).show();
     }
 
     public void reject(View view) {
         u.setAck(2);
         updateAck();
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
         Toast.makeText(this, "Rejected", Toast.LENGTH_SHORT).show();
     }
 

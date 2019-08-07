@@ -39,21 +39,120 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#1E1E1F"
         android:textSize="25sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="291dp" />
 
-    <Button
-        android:id="@+id/butt_exit"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="308dp"
-        android:layout_marginLeft="308dp"
-        android:layout_marginBottom="35dp"
-        android:onClick="exitor"
-        android:text="Exit" />
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:visibility="invisible"
+        app:cardBackgroundColor="#E9E3E5"
+        app:contentPadding="10dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="Empolyee Details:"
+                android:textSize="25sp"
+                android:textStyle="normal|bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/e_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emp Name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/e_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="phone"
+                    android:linksClickable="true"
+                    android:text="Emp Phone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cabin: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/e_cabin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emp Cabin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/e_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="email"
+                    android:keepScreenOn="false"
+                    android:linksClickable="true"
+                    android:text="Emp email" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
