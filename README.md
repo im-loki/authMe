@@ -43,3 +43,28 @@ Step 6.	When a request comes, the employee is shown the photo of the guest, thei
 
 Step 7.	Close App
 
+
+
+Screenshots:
+
+App Icons
+![](img/s11.png)
+
+Authenicator App:
+![](img/s1.png)
+![](img/s2.png)
+![](img/s3.png)
+![](img/s10.png)
+
+Requestor App:
+![](img/s4.png)
+![](img/s5.png)
+![](img/s6.png)
+![](img/s7.png)
+![](img/s8.png)
+![](img/s9.png)
+
+
+
+
+
