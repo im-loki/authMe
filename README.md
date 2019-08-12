@@ -21,18 +21,25 @@ Tools:
 •	Working internet connectivity
 
 Flow description:
+
 Step 1.	User is prompted to choose between:
 a.	Requester: Go to step 2
 b.	Acknowledger(employee): Go to step 5
+
 Step 2.	Collect guest information
 a.	Name
 b.	Photo
 c.	Purpose for visiting
+
 Step 3.	Send the request for the concerned employee
 If accepted: Show green screen
 Else: Display busy
+
 Step 4.	Go to step 7
+
 Step 5.	Employee must login and register to accept request.
+
 Step 6.	When a request comes, the employee is shown the photo of the guest, their name followed by an option to accept/reject the same with optional message.
+
 Step 7.	Close App
 
