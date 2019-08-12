@@ -1,11 +1,16 @@
 Android Applications.
-
+----------------
 Requirements:
+----------------
 -Android SDK and Studio
+
 -Firebase Account(Cloud Storage and Realtime Database)
+
 -Android emulator/device running 8+
 
+--------------------------------------------------------------------------
 Introduction
+--------------------------------------------------------------------------
 Presently developing an app that allows seamless connectivity in Real-time between security department of the company and its employees. Uses FireBase Cloud by Google for storing the image captured and data in the realtime NOSQL database.
 When a guest comes to visit an employee, instead of placing calls to and fro. The security guard captures a photo of the guest, and takes their name. Then he places a request for authentication by concerned employee. 
 
@@ -18,7 +23,9 @@ Once this is done, a request-entry is made in RealTime database of FireBase(Goog
 MyLogin named package:
 This is the acknowledger app. The employee logins and registers his device, and then checks for any pending requests in the database. If there is he is provided with an option Accept or not. Which is then updated in the corresponding entry in the database, and removes this from request TAB
 
+-------------------------------------------------------------------
 Flow description:
+-------------------------------------------------------------------
 
 Step 1.	User is prompted to choose between:
 a.	Requester: Go to step 2
@@ -41,9 +48,10 @@ Step 6.	When a request comes, the employee is shown the photo of the guest, thei
 
 Step 7.	Close App
 
-
+-----------------------------------------------------------------------
 
 Screenshots:
+-----------------------------------------------------------------------
 
 ----------
 App Icons
