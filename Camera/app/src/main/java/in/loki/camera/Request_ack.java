@@ -1,5 +1,7 @@
 package in.loki.camera;
 
+import android.util.Log;
+
 import java.util.Date;
 
 public class Request_ack {
@@ -10,7 +12,7 @@ public class Request_ack {
     public String id;
     public String downloadUri;
     public String phone;
-    Date date;
+    public Date date;
 
     public Request_ack() {
         /* Default constructor required for calls to DataSnapshot.getValue(User.class) */
@@ -23,6 +25,7 @@ public class Request_ack {
         this.phone=phone;
         this.downloadUri = downloadUri;
         this.date=date;
+        Log.i("helloworld", "Request_ack: "+ date);
     }
 
     public int getAck(){
